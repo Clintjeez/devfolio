@@ -67,7 +67,7 @@ export default {
           password: this.password,
           confirmPassword : this.confimPassword
         }
-        console.log(signupData)
+        
         this.$store.dispatch('signup', signupData)
       }
      },

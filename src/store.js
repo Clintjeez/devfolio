@@ -64,10 +64,15 @@ export default new Vuex.Store({
             token: res.data.idToken,
             userId: res.data.localId
           })
-
           router.push('/profile')
         })
-        .catch(error => alert(error.message))
+        .catch(error => {
+        if (error.response.status == 400) {
+           alert("We couldn't verify your account details.");
+         } else {
+           alert("Something went wrong, please refresh and try again.");
+         }
+        })
     },
     tryAutoLogin ({commit}) {
       const token = localStorage.getItem('token')

@@ -6,7 +6,9 @@
         placeholder="Email"
         type="email"
         id="email"
-        v-model="email">
+        v-model="email"
+       
+        >
       <input
         placeholder="Password"
         type="password"
@@ -33,7 +35,6 @@
           email: this.email,
           password: this.password,
         }
-        console.log(formData)
         this.$store.dispatch('login', {email: formData.email, password: formData.password})
       }
     }
