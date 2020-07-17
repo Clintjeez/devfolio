@@ -45,7 +45,13 @@ export default new Vuex.Store({
           dispatch('storeUser', authData)
           router.push('/profile')
         })
-        .catch(error => alert(error.message))
+        .catch(error => {
+          if (error.response.status == 400) {
+            alert("Please provide a valid account details");
+          } else {
+            alert("Something went wrong, please refresh and try again.");
+          }
+        })
     },
 
     // Login action

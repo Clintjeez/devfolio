@@ -6,14 +6,12 @@
         placeholder="Email"
         type="email"
         id="email"
-        v-model="email"
-       
-        >
+        v-model="email" required>
       <input
         placeholder="Password"
         type="password"
         id="password"
-        v-model="password">
+        v-model="password" required>
       <button type="submit">login</button>
       <p class="message">Not registered? <router-link to="/signup">Sign Up</router-link> </p>
     </form>
